@@ -7,7 +7,7 @@ A [Helm](https://helm.sh/) plugin for validating Helm charts against the Kuberne
 
 Install the plugin using the built-in plugin manager.
 
-```
+```shell
 helm plugin install https://github.com/instrumenta/helm-kubeval
 ```
 
@@ -44,7 +44,7 @@ The file nginx-ingress/templates/udp-configmap.yaml contains an empty YAML docum
 
 You can also specify a specific Kubernetes version to validate the chart against.
 
-```
+```shell
 helm kubeval . -v 1.9.0
 ```
 
@@ -53,8 +53,6 @@ exiting on the first error to disallowing properties not specified in the schema
 automatically passed to Kubeval, with any other options being passed to Helm in the same way as
 `helm template`. This means you could set values before validating the chart. eg.
 
-```
+```shell
 helm kubeval charts/stable/nginx-ingress --set controller.image.tag=latest
 ```
-
-

@@ -9,7 +9,7 @@ do
     if ! ((eoo)); then
         case "$1" in
             --version|--help)
-                $HELM_PLUGIN_DIR/bin/kubeval $1
+                "${HELM_PLUGIN_DIR}/bin/kubeval" "$1"
                 exit
                 ;;
             --strict|--exit-on-error|--openshift|--force-color|--ignore-missing-schemas)
@@ -34,4 +34,4 @@ done
 
 render=$(helm template "${helm_options[@]}")
 
-echo "$render" | $HELM_PLUGIN_DIR/bin/kubeval "${kubeval_options[@]}"
+echo "${render}" | "${HELM_PLUGIN_DIR}/bin/kubeval" "${kubeval_options[@]}"

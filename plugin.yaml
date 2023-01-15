@@ -1,3 +1,4 @@
+---
 name: "kubeval"
 version: "0.13.0"
 usage: "Validate Helm charts"
